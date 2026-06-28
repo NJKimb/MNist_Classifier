@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.2)
+cmake_minimum_required(VERSION 4.1)
 project(MNIST_C__)
 
 set(CMAKE_CXX_STANDARD 26)
@@ -16,3 +16,5 @@ set(SOURCES
 )
 
 add_executable(MNIST_C__ ${SOURCES})
+
+add_subdirectory(test)
