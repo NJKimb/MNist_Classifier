@@ -1,7 +1,5 @@
 #pragma once
 #include "matrix.h"
-#include <vector>
-#include <string>
 
 class Dataset {
 public:

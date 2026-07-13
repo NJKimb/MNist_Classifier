@@ -1,7 +1,7 @@
 #include "DataLoaders/MNistLoader.h"
 #include <iostream>
+#include <fstream>
 #include <cstdint>
-#include <bit>
 
 MNISTLoader::MNISTLoader() {
     this->size = 0;

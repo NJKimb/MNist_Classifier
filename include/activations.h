@@ -1,5 +1,4 @@
 #pragma once
-#include "matrix.h"
 #include <cmath>
 
 namespace Activations {

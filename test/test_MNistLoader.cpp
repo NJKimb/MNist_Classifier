@@ -2,6 +2,8 @@
 #include "catch2/catch_test_macros.hpp"
 #include <catch2/catch_approx.hpp>
 #include "DataLoaders/MNistLoader.h"
+#include <fstream>
+#include <vector>
 
 // Test case for reverseBytes function (swap endianness for MNist data)
 TEST_CASE("Endian swapping - 32-bit integers", "[endian]") {

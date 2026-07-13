@@ -1,7 +1,7 @@
 #include "network.h"
 
 template <typename ActivationFunction>
-NeuralNetwork::NeuralNetwork(const std::vector<int>& layerSizes) {
+NeuralNetwork<ActivationFunction>::NeuralNetwork(const std::vector<int>& layerSizes) {
     //LayerSizes is a vector containing the number of neurons in each layer,
     //so the size of the vector is number of layers
     int numLayers = layerSizes.size();
@@ -38,7 +38,7 @@ NeuralNetwork::NeuralNetwork(const std::vector<int>& layerSizes) {
 }
 
 template <typename ActivationFunction>
-Matrix NeuralNetwork::forward(const Matrix& input) {
+Matrix NeuralNetwork<ActivationFunction>::forward(const Matrix& input) {
     activations[0] = input;
 
     for (int i = 0; i < weights.size(); i++) {
@@ -56,6 +56,6 @@ Matrix NeuralNetwork::forward(const Matrix& input) {
 }
 
 template <typename ActivationFunction>
-void NeuralNetwork::backpropagate(const Matrix& input, const Matrix& target, double learningRate) {
+void NeuralNetwork<ActivationFunction>::backpropagate(const Matrix& input, const Matrix& target, double learningRate) {
     
 }
