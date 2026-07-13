@@ -15,7 +15,7 @@ include_directories(include)
 set(SOURCES
     src/main.cpp
     src/dataset.cpp
-    src/network.cpp
+    src/network.tpp
         include/matrix.h
         src/matrix.cpp
         include/DataLoaders/MNistLoader.h
