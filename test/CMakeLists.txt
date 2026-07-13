@@ -14,6 +14,7 @@ FetchContent_MakeAvailable(Catch2)
 # Compile the test executable
 add_executable(tests
         test_matrix.cpp
+        test_activations.cpp
         ../src/matrix.cpp
 )
 

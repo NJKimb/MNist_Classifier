@@ -10,6 +10,7 @@ private:
 public:
     Matrix(int r, int c);
     Matrix();
+    Matrix(int r, int c, std::vector<double> initData);
 
     void Randomize();
 
@@ -23,10 +24,10 @@ public:
 
     void multiply(double n);
     void multiply(const Matrix& m);
-
     static Matrix dot(const Matrix& a, const Matrix& b);
+    static Matrix hadamard(const Matrix& a, const Matrix& b);
 
-    static Matrix transpose(const Matrix& m);
+    Matrix transpose() const;
 
     void map(std::function<double(double)> func);
     static Matrix map (const Matrix& m, std::function<double(double)> func);
