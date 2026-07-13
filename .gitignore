@@ -1,3 +1,6 @@
+#Datasets
+mnist_dataset/
+
 # Build directories
 build/
 CMakeFiles/

@@ -15,7 +15,10 @@ FetchContent_MakeAvailable(Catch2)
 add_executable(tests
         test_matrix.cpp
         test_activations.cpp
+        test_MNistLoader.cpp
         ../src/matrix.cpp
+        ../src/DataLoaders/MNistLoader.cpp
+        ../src/dataset.cpp
 )
 
 set_target_properties(tests PROPERTIES

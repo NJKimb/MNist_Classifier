@@ -3,7 +3,13 @@
 #include <iostream>
 #include <random>
 
-// Constructor for empty matrix of size r x c
+// Default constructor
+Matrix::Matrix() {
+    rows = 0;
+    columns = 0;
+}
+
+// Constructor for matrix of size r x c
 Matrix::Matrix(const int r, const int c) {
     rows = r;
     columns = c;
@@ -114,6 +120,18 @@ void Matrix::Randomize() {
     for (double & i : data) {
         i = dis(gen);
     }
+}
+
+// Set all values in the matrix to 0
+void Matrix::SetZero() {
+    std::fill(data.begin(), data.end(), 0.0);   
+}
+
+// Resize matrix to given dimensions
+void Matrix::resize(int r, int c) {
+    rows = r;
+    columns = c;
+    data.resize(r * c);
 }
 
 // Hadamard product (element-wise multiplication)

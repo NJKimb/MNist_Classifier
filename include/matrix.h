@@ -8,11 +8,13 @@ private:
     int columns;
     std::vector<double> data;
 public:
-    Matrix(int r, int c);
     Matrix();
+    Matrix(int r, int c);
     Matrix(int r, int c, std::vector<double> initData);
 
     void Randomize();
+    void SetZero();
+    void resize(int r, int c);
 
     double& operator()(int r, int c);
     double operator()(int r, int c) const;
