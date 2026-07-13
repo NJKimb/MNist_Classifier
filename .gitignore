@@ -25,6 +25,7 @@ compile_commands.json
 .idea/
 .vscode/
 .antigravity/
+.cache/
 *.sublime-workspace
 *~
 *.swp
