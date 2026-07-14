@@ -16,9 +16,11 @@ add_executable(tests
         test_matrix.cpp
         test_activations.cpp
         test_MNistLoader.cpp
+        test_network.cpp
         ../src/matrix.cpp
         ../src/DataLoaders/MNistLoader.cpp
         ../src/dataset.cpp
+        ../src/network.cpp
 )
 
 set_target_properties(tests PROPERTIES

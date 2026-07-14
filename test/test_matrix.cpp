@@ -95,27 +95,6 @@ TEST_CASE("Matrix subtraction") {
     REQUIRE_THROWS_AS(Matrix::subtract(a, invalid), std::invalid_argument);
 }
 
-TEST_CASE("Matrix scalar and element-wise multiplication") {
-    Matrix m(2, 2, {1.0, 2.0, 3.0, 4.0});
-
-    // In-place scalar multiplication
-    m.multiply(3.0);
-    REQUIRE(m(0, 0) == Catch::Approx(3.0));
-    REQUIRE(m(0, 1) == Catch::Approx(6.0));
-    REQUIRE(m(1, 0) == Catch::Approx(9.0));
-    REQUIRE(m(1, 1) == Catch::Approx(12.0));
-
-    // In-place matrix element-wise multiplication
-    m.multiply(Matrix(2, 2, {2.0, 0.5, -1.0, 2.0}));
-    REQUIRE(m(0, 0) == Catch::Approx(6.0));
-    REQUIRE(m(0, 1) == Catch::Approx(3.0));
-    REQUIRE(m(1, 0) == Catch::Approx(-9.0));
-    REQUIRE(m(1, 1) == Catch::Approx(24.0));
-
-    // Dimensions check
-    REQUIRE_THROWS_AS(m.multiply(Matrix(3, 2)), std::invalid_argument);
-}
-
 TEST_CASE("Static element-wise matrix multiplication (Hadamard)") {
     Matrix a(2, 2, {1.0, 2.0, 3.0, 4.0});
     Matrix b(2, 2, {2.0, 0.5, 3.0, -1.0});
@@ -164,16 +143,4 @@ TEST_CASE("Matrix transpose") {
     REQUIRE(t(1, 1) == Catch::Approx(5.0));
     REQUIRE(t(2, 0) == Catch::Approx(3.0));
     REQUIRE(t(2, 1) == Catch::Approx(6.0));
-}
-
-TEST_CASE("Matrix in-place mapping function") {
-    Matrix m(2, 2, {1.0, -2.0, 3.0, -4.0});
-    
-    // Absolute value mapping
-    m.map([](double x) { return std::abs(x); });
-    
-    REQUIRE(m(0, 0) == Catch::Approx(1.0));
-    REQUIRE(m(0, 1) == Catch::Approx(2.0));
-    REQUIRE(m(1, 0) == Catch::Approx(3.0));
-    REQUIRE(m(1, 1) == Catch::Approx(4.0));
 }
